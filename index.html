@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="SIMPLE CLOCK AND IMAGE CHECK IN OFFLINE - ApplicationCaches Tutorial"/>
+
+    <title>URL App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+
+<body id="main_body">
+
+    <div id="shade"></div>
+    
+    <form action="" onsubmit="onSubmit(event)">
+    <div class="input_div">
+        <input type="text" id="url" class="url_input">
+        <button type="submit" onclick="goToURL()" id="go_btn">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    </form>
+
+    <!-- <div class="down_arrow_div">
+        <button onclick="showInputDiv()" id="down_arrow_btn">
+            <i class="fas fa-arrow-down"></i>
+        </button>
+    </div> -->
+    
+    <div class="iframe_container">
+        <iframe src="https://api.ips.procon.cloud/play?id=76"
+            sandbox="allow-scripts allow-same-origin allow-forms"
+            id="main_frame">
+        </iframe>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
