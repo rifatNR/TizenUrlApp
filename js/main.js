@@ -97,10 +97,14 @@ function showInputDiv() {
 	input_div.classList.add('show')
 	// var down_arrow_div = document.querySelector('.down_arrow_div')
 	// down_arrow_div.classList.remove('show')
+
+	document.querySelector('#url').focus()
 }
 function hideInputDiv() {
 	var input_div = document.querySelector('.input_div')
 	input_div.classList.remove('show')
 	// var down_arrow_div = document.querySelector('.down_arrow_div')
 	// down_arrow_div.classList.add('show')
+
+	document.querySelector('#url').blur()
 }
