@@ -108,3 +108,26 @@ function hideInputDiv() {
 
 	document.querySelector('#url').blur()
 }
+
+
+
+var network_status = 'online';
+setInterval(function(){
+	var ifConnected = window.navigator.onLine;
+	if (ifConnected) {
+		console.log('Connection available');
+		if(network_status != 'online') {
+			getSavedUrl()
+			network_status = 'online';
+			console.log('online page loaded');
+		}
+	} else {
+		console.log('Connection not available');
+		if(network_status != 'offline') {
+			var frame = document.querySelector("#main_frame");
+			frame.src = 'no_internet.html';
+			network_status = 'offline';
+			console.log('Offline page loaded');
+		}
+	}
+}, 3000);
