@@ -1,7 +1,7 @@
 body {
-	background-color: white;
+	/* background-color: white; */
 	margin: 0;
-	overflow: hidden
+	overflow: hidden;
 }
 
 h1 {
@@ -13,6 +13,10 @@ h1 {
 p {
 	font-size:3.5em;
 	margin:80px 10px 80px 10px
+}
+
+.dsp_none {
+	display: none !important;
 }
 
 .input_div {
@@ -137,4 +141,48 @@ p {
 
 	height: 100vh;
 	width: 100vw;
+}
+
+
+
+
+
+
+/* Offline div */
+.wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	align-items: center;
+	justify-content: center;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+	height: 100vh;
+	width: 100vw;
+}
+.wrapper-2 {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+}
+.wrapper h1 {
+	color: white;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 100px;
+	letter-spacing: 5px;
+	line-height: 1rem;
+	text-shadow: 0 0 3px white;
+}
+.wrapper h4 {
+	color: #f1f1f1;
+	font-family: arial;
+	font-weight: 300;
+	font-size: 32px;
 }

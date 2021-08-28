@@ -59,6 +59,7 @@ function renderIFrame(url) {
 	console.log(frame);
 	//frame.contentWindow.location.reload();
 	hideInputDiv()
+	setTimeout(checkNetwork, 5000);
 }
 
 function saveUrl(url) {
@@ -110,24 +111,39 @@ function hideInputDiv() {
 }
 
 
+setInterval(checkNetwork, 3000);
 
 var network_status = 'online';
-setInterval(function(){
-	var ifConnected = window.navigator.onLine;
-	if (ifConnected) {
-		console.log('Connection available');
-		if(network_status != 'online') {
-			getSavedUrl()
-			network_status = 'online';
-			console.log('online page loaded');
+function checkNetwork(){
+	// var isConnected = window.navigator.onLine;
+
+	var url = "https://jsonplaceholder.typicode.com/posts/1"
+
+	$.ajax({
+		url: url,
+		type: 'get',
+		dataType: 'json',
+		data: {},
+		success: function (data, textStatus, xhr) {
+			console.log(xhr.status);
+			console.log('Connection available');
+			if(network_status != 'online') {
+				getSavedUrl()
+				document.querySelector('.wrapper').classList.add('dsp_none')
+				network_status = 'online';
+				console.log('online page loaded');
+			}
+		},
+		error: function (xhr, textStatus) {
+			console.log(xhr.status);
+			console.log('Connection not available');
+			if(network_status != 'offline') {
+				// var frame = document.querySelector("#main_frame");
+				// frame.src = 'no_internet.html';
+				document.querySelector('.wrapper').classList.remove('dsp_none')
+				network_status = 'offline';
+				console.log('Offline page loaded');
+			}
 		}
-	} else {
-		console.log('Connection not available');
-		if(network_status != 'offline') {
-			var frame = document.querySelector("#main_frame");
-			frame.src = 'no_internet.html';
-			network_status = 'offline';
-			console.log('Offline page loaded');
-		}
-	}
-}, 3000);
+	});
+}
