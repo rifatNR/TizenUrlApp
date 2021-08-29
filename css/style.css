@@ -161,8 +161,17 @@ p {
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	text-align: center;
-	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+	/* background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%); */
+	background: white;
 	height: 100vh;
+	width: 100vw;
+}
+.wrapper img {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+	
 	width: 100vw;
 }
 .wrapper-2 {
@@ -170,7 +179,10 @@ p {
     top: 50%;
     left: 50%;
 	transform: translate(-50%, -50%);
+
+	width: 100vw;
 }
+
 .wrapper h1 {
 	color: white;
 	font-family: arial;

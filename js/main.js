@@ -59,7 +59,7 @@ function renderIFrame(url) {
 	console.log(frame);
 	//frame.contentWindow.location.reload();
 	hideInputDiv()
-	setTimeout(checkNetwork, 5000);
+	setTimeout(checkNetwork, 2000);
 }
 
 function saveUrl(url) {
