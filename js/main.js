@@ -111,7 +111,7 @@ function hideInputDiv() {
 }
 
 
-setInterval(checkNetwork, 3000);
+// setInterval(checkNetwork, 3000);
 
 var network_status = 'online';
 function checkNetwork(){
@@ -138,8 +138,7 @@ function checkNetwork(){
 			console.log(xhr.status);
 			console.log('Connection not available');
 			if(network_status != 'offline') {
-				// var frame = document.querySelector("#main_frame");
-				// frame.src = 'no_internet.html';
+				// document.querySelector("#main_frame").src = 'no_internet.html';
 				document.querySelector('.wrapper').classList.remove('dsp_none')
 				network_status = 'offline';
 				console.log('Offline page loaded');
